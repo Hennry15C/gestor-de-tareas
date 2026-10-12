@@ -10,8 +10,5 @@ Archivos
 index.html: la estructura de la página
 estilos.css: los estilos y los dos temas
 app.js: toda la lógica
-Para probarlo
-
-Toca el link que esta en el repositorio.
 
 Hennry, estudiante de Ingeniería de Sistemas en UDABOL.
