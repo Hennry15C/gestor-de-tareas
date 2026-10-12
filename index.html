@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gestor de tareas</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <header class="cabecera">
+    <div>
+      <h1>Gestor de tareas</h1>
+      <p>Organiza tus pendientes por prioridad, categoría y fecha límite.</p>
+    </div>
+    <button id="btnTema" class="btn secundario" type="button">Modo oscuro</button>
+  </header>
+
+  <main class="contenedor">
+    <section class="resumen" aria-label="Resumen de tareas">
+      <div class="dato"><strong id="statTotal">0</strong><span>Total</span></div>
+      <div class="dato"><strong id="statPendientes">0</strong><span>Pendientes</span></div>
+      <div class="dato"><strong id="statCompletadas">0</strong><span>Completadas</span></div>
+      <div class="dato vencida"><strong id="statVencidas">0</strong><span>Vencidas</span></div>
+      <div class="progreso">
+        <div class="pista" role="progressbar" aria-label="Progreso" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="pista">
+          <div id="barra"></div>
+        </div>
+        <small id="textoProgreso">Sin tareas todavía</small>
+      </div>
+    </section>
+
+    <div class="columnas">
+      <section class="panel">
+        <h2 id="tituloForm">Nueva tarea</h2>
+        <form id="formTarea" novalidate>
+          <label for="titulo">Título</label>
+          <input id="titulo" type="text" maxlength="80" autocomplete="off" placeholder="Ej: Entregar informe de física">
+          <span class="error" id="errorTitulo" role="alert"></span>
+
+          <label for="descripcion">Descripción (opcional)</label>
+          <textarea id="descripcion" maxlength="300" rows="3"></textarea>
+
+          <div class="fila">
+            <div>
+              <label for="prioridad">Prioridad</label>
+              <select id="prioridad">
+                <option value="alta">Alta</option>
+                <option value="media" selected>Media</option>
+                <option value="baja">Baja</option>
+              </select>
+            </div>
+            <div>
+              <label for="categoria">Categoría</label>
+              <select id="categoria"></select>
+            </div>
+          </div>
+
+          <label for="fecha">Fecha límite (opcional)</label>
+          <input id="fecha" type="date">
+
+          <div class="acciones-form">
+            <button id="btnGuardar" class="btn" type="submit">Agregar tarea</button>
+            <button id="btnCancelar" class="btn secundario" type="button" hidden>Cancelar</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="panel">
+        <h2>Mis tareas</h2>
+        <div class="filtros">
+          <input id="busqueda" type="search" placeholder="Buscar tareas" aria-label="Buscar tareas">
+          <select id="filtroEstado" aria-label="Estado">
+            <option value="todas">Todas</option>
+            <option value="pendientes">Pendientes</option>
+            <option value="completadas">Completadas</option>
+          </select>
+          <select id="filtroCategoria" aria-label="Categoría"></select>
+          <select id="filtroPrioridad" aria-label="Prioridad">
+            <option value="todas">Toda prioridad</option>
+            <option value="alta">Alta</option>
+            <option value="media">Media</option>
+            <option value="baja">Baja</option>
+          </select>
+          <select id="orden" aria-label="Ordenar por">
+            <option value="recientes">Más recientes</option>
+            <option value="fecha">Fecha límite</option>
+            <option value="prioridad">Prioridad</option>
+          </select>
+        </div>
+
+        <ul id="lista" class="lista"></ul>
+        <p id="vacio" class="vacio" hidden></p>
+
+        <div class="herramientas">
+          <button id="btnBorrarCompletadas" class="btn secundario" type="button">Borrar completadas</button>
+          <button id="btnExportar" class="btn secundario" type="button">Exportar</button>
+          <button id="btnImportar" class="btn secundario" type="button">Importar</button>
+          <input id="archivoImportar" type="file" accept="application/json" hidden>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="toast" role="status" aria-live="polite"></div>
+  <footer class="pie">Hecho por Hennry · Ingeniería de Sistemas, UDABOL</footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
