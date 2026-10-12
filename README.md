@@ -1,42 +1,19 @@
-# ✅ Gestor de tareas
+Gestor de tareas
 
-Aplicación web para organizar tareas pendientes, desarrollada con **HTML, CSS y JavaScript puro** (sin librerías ni servidor). Proyecto de portafolio que demuestra lógica de programación, manejo del DOM y persistencia de datos.
+Aplicación para organizar tareas pendientes. Se pueden crear, editar, marcar como completadas y eliminar (con opción de deshacer). Cada tarea tiene prioridad, categoría y una fecha límite opcional, y las que ya pasaron su fecha aparecen como vencidas.
 
-## Funcionalidades
+Página en vivo: https://TUUSUARIO.github.io/gestor-de-tareas
 
-- Crear, editar, completar y eliminar tareas
-- Prioridad (alta, media, baja), categoría y fecha límite
-- Detección automática de tareas vencidas
-- Búsqueda por texto y filtros por estado, categoría y prioridad
-- Orden por fecha de creación, fecha límite o prioridad
-- Panel de resumen con barra de progreso
-- Deshacer al eliminar una tarea
-- Exportar e importar tareas en formato JSON
-- Modo claro y oscuro (respeta la preferencia del sistema)
-- Datos guardados en el navegador con `localStorage`
-- Validación de formularios y diseño responsive
+Qué hace
 
-## Estructura
+Tiene búsqueda, filtros por estado, categoría y prioridad, y orden por fecha o prioridad. Arriba muestra un resumen con una barra de progreso. Las tareas se pueden exportar e importar en un archivo JSON, y hay modo oscuro. Todo se guarda en el navegador con localStorage.
 
-```
-├── index.html   # Estructura de la página
-├── estilos.css  # Estilos y temas
-└── app.js       # Lógica de la aplicación
-```
+Archivos
+index.html: la estructura de la página
+estilos.css: los estilos y los dos temas
+app.js: toda la lógica
+Para probarlo
 
-## Cómo ejecutarlo
+Descarga el proyecto y abre index.html en el navegador.
 
-1. Descarga o clona el repositorio
-2. Abre `index.html` en tu navegador
-
-## Conceptos aplicados
-
-- Manipulación del DOM sin `innerHTML` para evitar inyección de código
-- Delegación de eventos
-- Arreglos y métodos funcionales (`filter`, `map`, `sort`)
-- Persistencia con `localStorage` y manejo de errores con `try/catch`
-- Lectura y descarga de archivos con `FileReader` y `Blob`
-
-## Autor
-
-Hennry — estudiante de Ingeniería de Sistemas, UDABOL.
+Hennry, estudiante de Ingeniería de Sistemas en UDABOL.
